@@ -72,7 +72,6 @@ jobs:
         run: |
           gh release create mc${{ env.MINECRAFT_VERSION }}-${{ env.MOD_VERSION }} \
             --title="${{ env.RELEASE_NAME }}" \
-            --notes-file=${{ inputs.changelog }} \
             --target=${{ github.ref_name }} \
             --draft=false \
             --prerelease=${{ inputs.releaseType != 'stable' }} \
