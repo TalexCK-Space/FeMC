@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "femc",
+  "version": "${version}",
+  "name": "FeMC",
+  "description": "",
+  "authors": [
+    "Alex Tang(TalexCK)"
+  ],
+  "contact": {
+    "website": "https://www.talexck.top"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/femc/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "top.talexck.femc.client.FeMCClient"
+    ],
+    "main": [
+      "top.talexck.femc.FeMC"
+    ],
+    "modmenu": [ "top.talexck.femc.mods.ModMenuApiImpl" ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {},
+      "badges": [ "client" ],
+      "update_checker": true
+    }
+  }
+
+}
