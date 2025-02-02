@@ -17,6 +17,9 @@ on:
           - stable
           - beta
           - alpha
+      changelog:
+        type: text
+        description: Changelog
 
 jobs:
   build:
@@ -69,7 +72,7 @@ jobs:
         run: |
           gh release create mc${{ env.MINECRAFT_VERSION }}-${{ env.MOD_VERSION }} \
             --title="${{ env.RELEASE_NAME }}" \
-            --notes-file=CHANGELOG.md \
+            --notes-file=${{ inputs.changelog }} \
             --target=${{ github.ref_name }} \
             --draft=false \
             --prerelease=${{ inputs.releaseType != 'stable' }} \
